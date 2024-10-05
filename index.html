@@ -7,20 +7,31 @@
         <link rel="stylesheet" href="style.css" type="text/css" />
     </head>
     <body>
-        <h1>What is the time now?</h1>
+        <h1>What time is it now?</h1>
         <div class="clock">
             <div class="container"> 
                 <span id="datetime"></span>
 
                 <script>
                     function updateDateTime() {
-                        const date = new Date();
-                        const currentDate = date.toLocaleDateString();
-                        const currentTime = date.toLocaleTimeString();
-                        document.getElementById("datetime").textContent = currentDate.concat(" ", currentTime);
+                        const dayInWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+
+                        const dateObj = new Date();
+                        const year = dateObj.getFullYear();
+                        const month = dateObj.getMonth() + 1;
+                        const date = dateObj.getDate();
+                        const day = dateObj.getDay();
+
+                        const hours = dateObj.getHours();
+                        const minutes = dateObj.getMinutes();
+                        const seconds = dateObj.getSeconds();
+                        const miliseconds = Math.floor(dateObj.getMilliseconds() / 100) ;
+
+                        const displayTime = `${dayInWeek[day]} ${month}/${date}/${year} ${hours}:${minutes}:${seconds}:${miliseconds}`
+                        document.getElementById("datetime").textContent = displayTime;
                     }
 
-                    setInterval(updateDateTime, 1000);
+                    setInterval(updateDateTime, 100);
                 </script>
             </div>
         </div>
