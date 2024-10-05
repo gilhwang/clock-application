@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.clock {
+    position: fixed;
+    text-align: center;
+}
+
+h1 {
+    color: black;
+    font-weight: bold;
+    font-family: "Roboto";
+    text-decoration: underline;
+}
+
+.clock {
+    font-family: "Roboto";
+    font-size: 40px;
+}
+
+.container {
+    border: 3px solid #000;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}

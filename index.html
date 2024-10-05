@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width" initial-scale=1.0/>
+        <title>Gil Hwang's Clock Application</title>
+        <link rel="stylesheet" href="style.css" type="text/css" />
+    </head>
+    <body>
+        <h1>What is the time now?</h1>
+        <div class="clock">
+            <div class="container"> 
+                <span id="datetime"></span>
+
+                <script>
+                    function updateDateTime() {
+                        const date = new Date();
+                        const currentDate = date.toLocaleDateString();
+                        const currentTime = date.toLocaleTimeString();
+                        document.getElementById("datetime").textContent = currentDate.concat(" ", currentTime);
+                    }
+
+                    setInterval(updateDateTime, 1000);
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
